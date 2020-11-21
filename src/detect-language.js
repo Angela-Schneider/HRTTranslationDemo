@@ -46,6 +46,27 @@ function main(params) {
 
       // in case of errors during the call resolve with an error message according to the pattern 
       // found in the catch clause below
+      const languageTranslator = new LanguageTranslatorV3({
+        version: '2018-05-01',
+        authenticator: new IamAuthenticator({
+          apikey: '{apikey}',
+        }),
+        serviceUrl: '{url}',
+      });
+      
+      const identifyParams = {
+        text: 'Language translator translates text from one language to another'
+      };
+      
+      languageTranslator.identify(identifyParams)
+        .then(identifiedLanguages => {
+          console.log(JSON.stringify(identifiedLanguages, null, 2));
+        })
+        .catch(err => {
+          console.log('error:', err);
+        });
+
+        ///////////////////
 
       resolve({
         statusCode: 200,
