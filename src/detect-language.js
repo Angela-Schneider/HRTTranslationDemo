@@ -37,6 +37,35 @@ function main(params) {
 
     try {
       
+      const languageTranslator = new LanguageTranslatorV3({
+        version: '2018-05-01',
+        authenticator: new IamAuthenticator({
+          apikey: '{apikey}',
+        }),
+        serviceUrl: '{url}',
+      });
+
+      console.log('found stuff, doing stuff');
+
+
+      /**
+      const identifyParams = {
+        text: 'Language translator translates text from one language to another'
+      };
+      
+      languageTranslator.identify(identifyParams)
+        .then(identifiedLanguages => {
+          console.log(JSON.stringify(identifiedLanguages, null, 2));
+        })
+        .catch(err => {
+          console.log('error:', err);
+        });
+
+
+        identify(params, [callback()])
+
+        */
+
       // *******TODO**********
       // - Call the language identification API of the translation service
       // see: https://cloud.ibm.com/apidocs/language-translator?code=node#identify-language
