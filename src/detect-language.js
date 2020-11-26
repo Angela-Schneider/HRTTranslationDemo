@@ -1,6 +1,6 @@
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
-
+console.log("Maxi")
 
 /**
  * Helper 
@@ -49,9 +49,9 @@ function main(params) {
       const languageTranslator = new LanguageTranslatorV3({
         version: '2018-05-01',
         authenticator: new IamAuthenticator({
-          apikey: '{apikey}',
+          apikey: 'ote3m_iJZjEegRcWvOBFiCTEy2bFywLYUDa4zW2xZpRt',
         }),
-        serviceUrl: '{url}',
+        serviceUrl: 'https://api.eu-de.language-translator.watson.cloud.ibm.com/instances/67c567ff-f0c1-4b91-a852-08fb1428ad99',
       });
       
       const identifyParams = {
@@ -61,6 +61,16 @@ function main(params) {
       languageTranslator.identify(identifyParams)
         .then(identifiedLanguages => {
           console.log(JSON.stringify(identifiedLanguages, null, 2));
+          resolve({
+            statusCode: 200,
+            body: {
+              text: params.text, 
+              language: "<Hello>",
+              confidence: 0.5,
+            },
+            headers: { 'Content-Type': 'application/json' }
+          });
+    
         })
         .catch(err => {
           console.log('error:', err);
@@ -68,15 +78,6 @@ function main(params) {
 
         ///////////////////
 
-      resolve({
-        statusCode: 200,
-        body: {
-          text: params.text, 
-          language: "<Hello>",
-          confidence: 0.5,
-        },
-        headers: { 'Content-Type': 'application/json' }
-      });
 
 
     } catch (err) {
