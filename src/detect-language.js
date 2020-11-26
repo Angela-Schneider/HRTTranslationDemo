@@ -72,8 +72,8 @@ function main(params) {
         statusCode: 200,
         body: {
           text: params.text, 
-          language: "<Best Language>",
-          confidence: 0.8,
+          language: "<Hello>",
+          confidence: 0.5,
         },
         headers: { 'Content-Type': 'application/json' }
       });
