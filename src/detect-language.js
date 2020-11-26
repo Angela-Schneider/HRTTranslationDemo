@@ -73,7 +73,7 @@ function main(params) {
         body: {
           text: params.text, 
           language: "<Best Language>",
-          confidence: 0.5,
+          confidence: 0.8,
         },
         headers: { 'Content-Type': 'application/json' }
       });
