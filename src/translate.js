@@ -70,9 +70,9 @@ function main(params) {
         resolve({
           statusCode: 200,
           body: {
-            translations: translationResult.translations,
-            words: translationResult.words,
-            characters: translationResult.characters,
+            translations: JSON.stringify(translationResult.translations, null, 2),
+            words: JSON.stringify(translationResult.words, null, 2),
+            characters: JSON.stringify(translationResult.characters, null, 2),
           },
           headers: { 'Content-Type': 'application/json' }
         });
