@@ -72,7 +72,7 @@ function main(params) {
           body: {
             translations: translationResult.translations,
             words: translationResult.words,
-            characters: 11,
+            characters: translationResult.characters,
           },
           headers: { 'Content-Type': 'application/json' }
         });
