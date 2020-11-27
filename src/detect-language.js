@@ -55,7 +55,7 @@ function main(params) {
       });
       
       const identifyParams = {
-        text: 'Language translator translates text from one language to another'
+        text: 'Hallo Angela das müsste deutsch sein'
       };
       
       languageTranslator.identify(identifyParams)
