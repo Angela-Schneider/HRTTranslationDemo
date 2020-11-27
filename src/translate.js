@@ -66,7 +66,7 @@ function main(params) {
       languageTranslator.translate(translateParams)
       .then(translationResult => {
         console.log(JSON.stringify(translationResult, null, 2));
-        console.log(translationResult.translations[0]);
+        //console.log(translationResult.translations[0]);
         resolve({
           statusCode: 200,
           body: {
